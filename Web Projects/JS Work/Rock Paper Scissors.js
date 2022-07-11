@@ -58,4 +58,6 @@ const playGame = () => {
 };
 
 playGame()
- 
+
+console.log(playGame());
+
