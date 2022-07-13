@@ -142,7 +142,7 @@ text-transform: uppercase;
     border-radius: 20px;
   }
 
-  .card1 {
+  .card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8 {
     display: flex;
     margin: auto;
     width: 250px;
@@ -150,59 +150,4 @@ text-transform: uppercase;
     margin-top: 25px;
     border-radius: 5px;
   }
-  .card2 {
-    display: flex;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    margin-top: 25px;
-    border-radius: 5px;
-  }
-  .card3 {
-    display: flex;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    margin-top: 25px;
-    border-radius: 5px;
-  }
-  .card4 {
-    display: flex;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    margin-top: 25px;
-    border-radius: 5px;
-  }
-  .card5 {
-    display: flex;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    margin-top: 25px;
-    border-radius: 5px;
-  }
-  .card6 {
-    display: flex;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    margin-top: 25px;
-    border-radius: 5px;
-  }
-  .card7 {
-    display: flex;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    margin-top: 25px;
-    border-radius: 5px;
-  }
-  .card8 {
-    display: flex;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    margin-top: 25px;
-    border-radius: 5px;
-  }
+ 
