@@ -10,7 +10,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     font-family: 'karnakpro-bold-5', sans-serif;
 }
 
@@ -132,12 +131,11 @@ text-transform: uppercase;
   .container3 {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
     flex-wrap: wrap;
   }
 
   .card{
-    background-color: var(--dark);
     width: 300px;
     height: 300px;
     margin: 10px;
@@ -150,7 +148,7 @@ text-transform: uppercase;
     width: 250px;
     height: 250px;
     margin-top: 25px;
-    border-radius: 5px;
+    border-radius: 20px;
   }
 
   .card:hover{
@@ -158,4 +156,28 @@ text-transform: uppercase;
     transform: scale(1.03);
     transition: all is ease;
     cursor: pointer;
+  }
+  
+  body {
+    background-color: var(--dark);
+  }
+  
+  .next {
+    display: block;
+    margin: auto;
+    width: 8%;
+    border-radius: 20px;
+    margin-top: 25px;
+    padding: 10px 20px;
+    color: black;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'karnakpro-bold-5', sans-serif;
+    opacity: 0.9;
+  }
+
+  .next:hover {
+    background-color: var(--primary);
   }
