@@ -124,6 +124,7 @@ text-transform: uppercase;
   }
 
   .container2 {
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     margin-top: 120px;
@@ -132,6 +133,7 @@ text-transform: uppercase;
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    flex-wrap: wrap;
   }
 
   .card{
@@ -150,4 +152,10 @@ text-transform: uppercase;
     margin-top: 25px;
     border-radius: 5px;
   }
- 
+
+  .card:hover{
+    background-color: #538d4e;
+    transform: scale(1.03);
+    transition: all is ease;
+    cursor: pointer;
+  }
