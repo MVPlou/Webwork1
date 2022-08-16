@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Dribble</title>
+    <link rel="shortcut icon" href="#">
+    <script type="module" src="js/main.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <script async defer data-website-id="c6ac76cd-89f5-4934-b4a5-02593e1e004b" src="https://umami-production-ce28.up.railway.app/umami.js"></script> -->
+    <script async defer data-website-id="f8963893-26f9-473d-afdf-8317289655ce" src="https://umami.dribblegame.com/umami.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEXEVW4KPQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WEXEVW4KPQ');
+    </script>
+</head>
+<body>
+    <div id="tutorial-container" class="hidden">
+        <div id="tutorial-modal">
+            <div id="tutorial-modal-close">
+                <button id="tutorial-modal-close-button">x</button>
+            </div>
+            <div id="tutorial-content">
+                <h1 class="tutorial-title">HOW TO PLAY</h1>
+                <p class="tutorial-text">Connect two NBA players through 6 or fewer mutual teammates.</p>
+                <div class="line-break"></div>
+                <div class="tutorial-text small" id="tutorial-example-title"><span id="tutorial-example-bold">Example:</span> Connect <span class="tutorial-example-bold">Curry</span> to <span class="tutorial-example-bold">LeBron</span></div>
+                <div class="tutorial-game">
+                    <div class="tutorial-pool-row highlight">Stephen Curry</div>
+                    <div class="tutorial-pool-row">Kevin Durant</div>
+                    <div class="tutorial-pool-row incorrect">Kevin Love</div>
+                    <div class="tutorial-pool-row winner">Kyrie Irving</div>
+                    <div class="tutorial-pool-row highlight">LeBron James</div>
+                </div>
+                <div class="tutorial-guess">Guess 1: <span class="tutorial-valid">Kevin Durant</span></div>
+                <div class="tutorial-text small example">A valid guess since he played with Curry. He's never played with LeBron, so the game continues.</div>
+                <div class="tutorial-guess">Guess 2: <span class="tutorial-incorrect">Kevin Love</span></div>
+                <div class="tutorial-text small example">An incorrect guess since he's never played with Durant.</div>
+                <div class="tutorial-guess">Guess 3: <span class="tutorial-winner">Kyrie Irving</span></div>
+                <div class="tutorial-text small example">A valid guess since he's played with Durant, and also a <span class="tutorial-bold">winning</span> guess since he played with LeBron.</div>
+            </div>
+        </div>
+    </div>
+    <div id="loader_container">
+        <div class="basketball">
+            <div class="ball">
+                <div class="lines"></div>
+            </div>
+          <div class="shadow"></div>
+        </div>        
+    </div>
+    <div id="copy_modal_container" class="hidden">
+        <div id="copy_modal">
+            Copied results to clipboard
+        </div>
+    </div>
+    <div class="modal-container" id="modal_container">
+        <div class="modal">
+            <div id="close_btn_wrapper">
+                <button id="close_button">x</button>
+            </div>
+            <div id="modal_top">
+                <div id="solution"">
+                </div>
+                <h1 id="stats">STATISTICS</h1>
+                <div id="stats_wrapper">
+                    <div class="stat" id="num_games">
+                        <div class="stat-num"></div>
+                        <div class="stat-unit">Played</div>
+                    </div>
+                    <div class="stat" id="win_perc">
+                        <div class="stat-num"></div>
+                        <div class="stat-unit">Win %</div>
+                    </div>
+                    <div class="stat" id="current_streak">
+                        <div class="stat-num"></div>
+                        <div class="stat-unit">Current Streak</div>
+                    </div>
+                    <div class="stat" id="max_streak">
+                        <div class="stat-num"></div>
+                        <div class="stat-unit">Max Streak</div>
+                    </div>                  
+                </div>
+            </div>
+            <div id="guess_distribution">
+                <h1 id="guess_title">GUESS DISTRIBUTION</h1>
+                <div class="graph-container">
+                    <div class="guess">1</div>
+                    <div class="graph">
+                        <div class="graph-bar inactive" id="bar_0">
+                            <div class="num-guesses"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph-container">
+                    <div class="guess">2</div>
+                    <div class="graph">
+                        <div class="graph-bar inactive" id="bar_1">
+                            <div class="num-guesses"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph-container">
+                    <div class="guess">3</div>
+                    <div class="graph">
+                        <div class="graph-bar inactive" id="bar_2">
+                            <div class="num-guesses"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph-container">
+                     <div class="guess">4</div>
+                    <div class="graph">
+                        <div class="graph-bar inactive" id="bar_3">
+                            <div class="num-guesses"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph-container">
+                    <div class="guess">5</div>
+                    <div class="graph">
+                        <div class="graph-bar inactive" id="bar_4">
+                            <div class="num-guesses"></div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="graph-container">
+                        <div class="guess">6</div>
+                        <div class="graph">
+                            <div class="graph-bar inactive" id="bar_5">
+                                <div class="num-guesses"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div id="share_wrapper">
+                <button id="share_social">
+                    Share
+                    <svg class="inline-block ml-2" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="support_modal_container" class="hidden">
+        <div id="support_modal">
+            <div id="support_modal_close">
+                <button id="support_modal_close_button">x</button>
+            </div>
+            <div id="support_text">
+                <h1 id="support_title">ABOUT</h1>
+                <p class="support-copy">Dribble is a passion project created by <a href="https://twitter.com/taylor_stein" target="_blank" style="color:rgb(255, 255, 255)">Taylor Stein</a>, a hoops fanatic in sunny San Diego, CA ☀️</p>
+                <p class="support-copy">💖 Love playing Dribble and want to show your support? You can help fuel these late nights and early evenings by donating me a coffee below.</p>
+                <p class="support-copy" id="coffee-link">
+                    <a href="https://www.buymeacoffee.com/taylorstein" target="_blank"><img src="https://img.buymeacoffee.com/button-api/?text=Buy Taylor a Coffee&emoji=&slug=taylorstein&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
+                </p>
+                <p class="support-copy">Last, and certainly not least, special thank you to all of my friends who have helped bring this project to life. This game wouldn't be the same without your help, and y'all are the real MVPs.</p>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <header>
+            <div id="header_content">
+                <div id="left_header_buttons">
+                    <div id="header_support_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="24" height="24"
+                        viewBox="0 0 24 24"
+                        style=" fill:hsl(0, 0%, 0%);"> <path stroke="white" stroke-width="2" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </svg>
+                    </div>
+                    <div id="header_tutorial_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="24" height="24"
+                        viewBox="0 0 24 24"
+                        style=" fill:hsl(0, 0%, 100%);">    <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 9 L 13 9 L 13 7 L 11 7 z M 11 11 L 11 17 L 13 17 L 13 11 L 11 11 z"></path></svg>
+                        </svg>
+                    </div>
+                </div>
+                <h1 class="title">DRIBBLE</h1>
+                <div id="right_header_buttons">
+                    <div id="header_stats_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path fill="white" d="M16,11V3H8v6H2v12h20V11H16z M10,5h4v14h-4V5z M4,11h4v8H4V11z M20,19h-4v-6h4V19z"></path>
+                        </svg>
+                    </div>
+                    <div id="right_header_spacer"></div>
+                </div>
+            </div>
+        </header>
+        <div id="game">
+            <div id="board">
+                <div id="game_prompt">
+                    <span>Connect <span>
+                    <span class="game-prompt-player" id="prompt_player_1"></span>
+                    <span> to </span>
+                    <span class="game-prompt-player" id="prompt_player_2"></span>
+                    <span> through mutual teammates</span>
+                </div>
+                <div id="player-pool">
+                    <div id="search-container">
+                        <div id="search-results-container">
+                            <div id="auto-complete-results">
+                                <div id="search_stats"></div>
+                                <button type="button" class="auto-complete-result" id="result-0"></button>
+                                <button type="button" class="auto-complete-result" id="result-1"></button>
+                                <button type="button" class="auto-complete-result" id="result-2"></button>
+                                <button type="button" class="auto-complete-result" id="result-3"></button>
+                                <button type="button" class="auto-complete-result" id="result-4"></button>
+                            </div>
+                            <div id="search-wrapper">
+                                <input
+                                type="text"
+                                name="searchBar"
+                                id="search_bar"
+                                autocomplete="off"
+                                placeholder="search for a player"/>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div id="remaining_guesses">
+                    <span class="remaining-guesses-text">( </span>
+                    <span class="remaining-guesses-number" id="remaining_guesses_number"></span>
+                    <span class="remaining-guesses-text" id="remaining_guesses_suffix"> guesses remaining )</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
