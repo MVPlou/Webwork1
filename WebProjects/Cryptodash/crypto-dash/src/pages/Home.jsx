@@ -1,10 +1,10 @@
 import React from 'react'
 import CoinSearch from '../components/CoinSearch'
 
-export const Home = () => {
+export const Home = ({coin}) => {
   return (
     <div>
-      <CoinSearch />
+      <CoinSearch coin={coin} />
     </div>
   )
 }

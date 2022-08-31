@@ -5,4 +5,4 @@ export const Account = () => {
     <div>Acount</div>
   )
 }
-export default Account
+export default Account;

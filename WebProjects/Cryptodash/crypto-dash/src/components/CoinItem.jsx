@@ -1,5 +1,5 @@
-import React from 'react'
-import CoinSearch from './CoinSearch';
+
+import React, { useState } from 'react';
 import { AiOutlineStar } from 'react-icons/ai'
 import { Sparklines, SparklinesLines } from 'react-sparklines';
 
@@ -30,4 +30,4 @@ export const CoinItem = ({coin}) => {
   );
 };
 
-export default CoinItem;
+export default CoinItem
