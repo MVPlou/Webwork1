@@ -26,8 +26,8 @@ const CoinSearch = ({ coins }) => {
             <th>Last 7 Days</th>
           </tr>
         </thead>
-        <tbody>
-              <tr>
+        <tbody> 
+            <tr>
               {coins?.map((coin) => (
                 <CoinItem key={coin.id} coin={coin} />
               ))}
