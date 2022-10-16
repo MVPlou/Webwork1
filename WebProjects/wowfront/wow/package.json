@@ -1,0 +1,42 @@
+{
+  "name": "my-frontity-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity"
+  ],
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chakra-ui/frontity-chakra-ui-theme.git"
+  },
+  "author": "Segun Adebayo <sage@adebayosegun.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chakra-ui/frontity-chakra-ui-theme/issues"
+  },
+  "homepage": "https://github.com/chakra-ui/frontity-chakra-ui-theme#readme",
+  "prettier": {},
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@frontity/core": "^1.11.0",
+    "@frontity/html2react": "^1.6.1",
+    "@frontity/tiny-router": "^1.4.0",
+    "@frontity/wp-source": "^1.11.2",
+    "frontity": "^1.14.2",
+    "frontity-chakra-theme": "./packages/frontity-chakra-theme"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.2.8",
+    "@changesets/cli": "^2.14.1",
+    "eslint": "^7.21.0",
+    "eslint-plugin-react": "^7.22.0"
+  }
+}
